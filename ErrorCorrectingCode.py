@@ -1,4 +1,4 @@
-class Code:
+class ErrorCorrectingCode:
   '''This class define an error correcting code'''
   
   def __init__(self, C):
