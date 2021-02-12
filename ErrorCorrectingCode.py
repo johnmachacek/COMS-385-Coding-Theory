@@ -6,3 +6,6 @@ class ErrorCorrectingCode:
   
   def size(self):
     return len(C)
+  
+  def length(self):
+    return len(C[0])
