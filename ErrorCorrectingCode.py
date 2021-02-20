@@ -1,7 +1,7 @@
 class ErrorCorrectingCode:
   '''
   A class to represent  an error correcting code
-  
+
   Attributes
   ----------
   code_words: A list of strings representing code words in the code
@@ -12,11 +12,11 @@ class ErrorCorrectingCode:
   size(): Returns the size of the code (i.e. the number of code words)
   length(): Returns length of any (all) code word(s)
   '''
-  
+
   def __init__(self, C):
     '''
     Creates an error correcting code.
-    
+
     Parameters
     ----------
     C: a list of codewords each of which should be string of the same length
@@ -26,10 +26,19 @@ class ErrorCorrectingCode:
       self.code_words = C
       self.__n = m
     else:
-      raise ValueError("Error: all code words must have the same length")
+      raise ValueError("All code words must have the same length")
 
   def size(self):
     return len(self.code_words)
-  
+
   def length(self):
     return self.__n
+
+  def hammingDist(wrd1, wrd2):
+    dist = 0
+
+    length = wrd1.length()
+    for i in range(length):
+        if wrd1[i] != wrd2[i]:
+            dist += 1
+    return dist
