@@ -22,7 +22,7 @@ class ErrorCorrectingCode:
     C: a list of codewords each of which should be string of the same length
     '''
     m = len(C[0])
-    if all([len(w) == m for w in C]):
+    if all([len(w) == m for w in C]) and len(C) == len(set(C)):
       self.code_words = C
       self.__n = m
     else:
