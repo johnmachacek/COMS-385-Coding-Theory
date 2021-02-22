@@ -34,6 +34,8 @@ class ErrorCorrectingCode:
   def length(self):
     return self.__n
 
+
+#Hamming distance function that takes two words as parameters
   def hammingDist(wrd1, wrd2):
     dist = 0
 
