@@ -42,3 +42,5 @@ class ErrorCorrectingCode:
         if wrd1[i] != wrd2[i]:
             dist += 1
     return dist
+
+  def minDistance(self):
