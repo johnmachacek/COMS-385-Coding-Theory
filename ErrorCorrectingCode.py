@@ -39,7 +39,7 @@ class ErrorCorrectingCode:
   def hammingDist(wrd1, wrd2):
     dist = 0
 
-    length = wrd1.length()
+    length = len(wrd1)
     for i in range(length):
         if wrd1[i] != wrd2[i]:
             dist += 1
