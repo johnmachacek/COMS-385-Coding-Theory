@@ -29,7 +29,6 @@ class ErrorCorrectingCode:
       raise ValueError("all code words must have the same length")
       
     if len(C) == len(set(C)):
-      self.code_words = C
       print("The code words contain no duplicates\n")
      else:
       raise ValueError("There can be no duplicate code words")
