@@ -37,10 +37,21 @@ class ErrorCorrectingCode:
   def hammingDist(wrd1, wrd2):
     dist = 0
 
-    length = wrd1.length()
+    length = len(wrd1)
     for i in range(length):
-        if wrd1[i] != wrd2[i]:
-            dist += 1
+      if wrd1[i] != wrd2[i]:
+        dist += 1
     return dist
 
-  def minDistance(self):
+  def minDistance(wrd1, wrd2):
+    length = wrd1.length(wrd1)
+    length1 = wrd2.length(wrd2)
+
+    if length != length1:
+      print("these code words are not equal length")
+
+    mindist = 0
+    for i in range(length):
+      mindist = hammingDist(wrd1, wrd2)
+
+    return mindist
