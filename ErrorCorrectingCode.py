@@ -22,7 +22,7 @@ class ErrorCorrectingCode:
 
         m = len(c[0])
         if all([len(w) == m for w in c]):
-            self.code_words = c
+            self.__code_words = c
             self.__n = m
         else:
             raise ValueError("all code words must have the same length")
@@ -52,8 +52,10 @@ class ErrorCorrectingCode:
         dist = 0
         mindist = 0
         for [u, v] in combinations(a, 2):
-            dist = hammingDist(u, v)
+            dist = ErrorCorrectingCode.hammingDist(u, v)
             if dist == 0:
                 mindist = 0
 
-        return min(mindist)
+            
+
+        return mindist
