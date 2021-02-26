@@ -1,57 +1,60 @@
+from itertools import combinations
+
 class ErrorCorrectingCode:
-  '''
-  A class to represent  an error correcting code
+    # A class to represent  an error correcting code
 
-  Attributes
-  ----------
-  code_words: A list of strings representing code words in the code
-  __n: The (common) length of each code word
+    # Attributes
+    # ----------
+    # code_words: A list of strings representing code words in the code
+    # __n: The (common) length of each code word
+    # Functions
+    # ---------
+    # size(): Returns the size of the code (i.e. the number of code words)
+    # length(): Returns length of any (all) code word(s)
 
-  Functions
-  ---------
-  size(): Returns the size of the code (i.e. the number of code words)
-  length(): Returns length of any (all) code word(s)
-  '''
+    def __init__(self, c):
 
-  def __init__(self, C):
-    '''
-    Creates an error correcting code.
+        # Creates an error correcting code.
 
-    Parameters
-    ----------
-    C: a list of codewords each of which should be string of the same length
-    '''
-    m = len(C[0])
-    if all([len(w) == m for w in C]):
-      self.code_words = C
-      self.__n = m
-    else:
-      raise ValueError("All code words must have the same length")
+        # Parameters
+        # ----------
+        # c: a list of codewords each of which should be string of the same length
 
-  def size(self):
-    return len(self.code_words)
+        m = len(c[0])
+        if all([len(w) == m for w in c]):
+            self.code_words = c
+            self.__n = m
+        else:
+            raise ValueError("all code words must have the same length")
 
-  def length(self):
-    return self.__n
+    def size(self):
+        return len(self.code_words)
 
-  def hammingDist(wrd1, wrd2):
-    dist = 0
+    def length(self):
+        return self.__n
 
-    length = len(wrd1)
-    for i in range(length):
-      if wrd1[i] != wrd2[i]:
-        dist += 1
-    return dist
+    def hammingDist(wrd1, wrd2):
+        dist = 0
 
-  def minDistance(wrd1, wrd2):
-    length = wrd1.length(wrd1)
-    length1 = wrd2.length(wrd2)
+        length = len(wrd1)
+        for i in range(length):
+            if wrd1[i] != wrd2[i]:
+                dist += 1
+        return dist
 
-    if length != length1:
-      print("these code words are not equal length")
+    def minDistance(code):
 
-    mindist = 0
-    for i in range(length):
-      mindist = hammingDist(wrd1, wrd2)
+        list = self.getCodeWords()
 
-    return mindist
+        for [i, j] in code:
+            if len(code[i]) != len(code[j]):
+                print("these code words are not equal lengths")
+
+        dist = 0
+        mindist = 0
+        for [u, v] in combinations(code, 2):
+            dist = hammingDist(u, v)
+            if dist == 0:
+                mindist = 0
+
+        return min(mindist)
