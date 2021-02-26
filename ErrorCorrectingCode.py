@@ -48,6 +48,6 @@ class ErrorCorrectingCode:
     return dist
 
 
-#A function to get code words
+#A function to get code words (Returns codeWords in a LIST)
   def getCodeWords(self):
     return(self.__code_words)
