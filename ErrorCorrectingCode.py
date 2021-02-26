@@ -33,6 +33,9 @@ class ErrorCorrectingCode:
     def length(self):
         return self.__n
 
+    def getCodeWords(self):
+      return (self.__code_words)
+
     def hammingDist(wrd1, wrd2):
         dist = 0
 
@@ -42,7 +45,7 @@ class ErrorCorrectingCode:
                 dist += 1
         return dist
 
-    def minDistance():
+    def minDistance(self):
 
         a = self.getCodeWords()
 
