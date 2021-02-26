@@ -42,17 +42,13 @@ class ErrorCorrectingCode:
                 dist += 1
         return dist
 
-    def minDistance(code):
+    def minDistance():
 
-        list = self.getCodeWords()
-
-        for [i, j] in code:
-            if len(code[i]) != len(code[j]):
-                print("these code words are not equal lengths")
+        a = self.getCodeWords()
 
         dist = 0
         mindist = 0
-        for [u, v] in combinations(code, 2):
+        for [u, v] in combinations(a, 2):
             dist = hammingDist(u, v)
             if dist == 0:
                 mindist = 0
