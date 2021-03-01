@@ -41,7 +41,7 @@ class ErrorCorrectingCode:
     return self.__n
 
   def __len__(self):
-    return self.size(self)
+    return self.size()
     
 
 #Hamming distance function that takes two words as parameters
