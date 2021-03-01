@@ -54,21 +54,12 @@ class ErrorCorrectingCode:
 
 
 #A function to create the replication code for a user specified length
-<<<<<<< Updated upstream
-  def replicationCode(length):
-=======
   def repititionCode(length):
->>>>>>> Stashed changes
     #create the 0 replication of size length
     string0 = "".join('0' for i in range(length))
 
     #create the 1 replication of size length
     string1 = "".join('1' for i in range(length))
-
-<<<<<<< Updated upstream
-    replication = [string0, string1]
-    return replication
-=======
 
     repitition = [string0, string1]
     return repitition
@@ -78,4 +69,3 @@ class ErrorCorrectingCode:
   def __getitem__(self, i):
     list = self.__code_words
     return list[i]
->>>>>>> Stashed changes
