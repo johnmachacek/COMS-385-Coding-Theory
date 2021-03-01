@@ -26,10 +26,13 @@ class ErrorCorrectingCode:
     '''
     m = len(C[0])
     if all([len(w) == m for w in C]):
-      self.__code_words = C
       self.__n = m
     else:
       raise ValueError("All code words must have the same length")
+    if len(C) == len(set(C)):
+      self.__code_words = C
+     else:
+      raise ValueError("There can be no duplicate code words")
 
   def size(self):
     return len(self.code_words)
