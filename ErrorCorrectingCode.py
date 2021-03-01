@@ -1,3 +1,6 @@
+#imports
+from itertools import combinations
+
 class ErrorCorrectingCode:
   '''
   A class to represent  an error correcting code
@@ -25,10 +28,9 @@ class ErrorCorrectingCode:
     if all([len(w) == m for w in C]):
       self.__n = m
     else:
-      raise ValueError("all code words must have the same length")
-      
+      raise ValueError("All code words must have the same length")
     if len(C) == len(set(C)):
-      self.code_words = C
+      self.__code_words = C
      else:
       raise ValueError("There can be no duplicate code words")
 
@@ -42,9 +44,13 @@ class ErrorCorrectingCode:
 #Hamming distance function that takes two words as parameters
   def hammingDist(wrd1, wrd2):
     dist = 0
-
     length = len(wrd1)
     for i in range(length):
         if wrd1[i] != wrd2[i]:
             dist += 1
     return dist
+
+
+#A function to get code words (Returns codeWords in a LIST)
+  def getCodeWords(self):
+    return(self.__code_words)
