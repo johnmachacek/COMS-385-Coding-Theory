@@ -51,3 +51,15 @@ class ErrorCorrectingCode:
 #A function to get code words (Returns codeWords in a LIST)
   def getCodeWords(self):
     return(self.__code_words)
+
+
+#A function to create the replication code for a user specified length
+  def replicationCode(length):
+    #create the 0 replication of size length
+    string0 = "".join('0' for i in range(length))
+
+    #create the 1 replication of size length
+    string1 = "".join('1' for i in range(length))
+
+    replication = [string0, string1]
+    return replication
