@@ -26,13 +26,10 @@ class ErrorCorrectingCode:
     '''
     m = len(C[0])
     if all([len(w) == m for w in C]):
+      self.__code_words = C
       self.__n = m
     else:
       raise ValueError("All code words must have the same length")
-    if len(C) == len(set(C)):
-      self.__code_words = C
-     else:
-      raise ValueError("There can be no duplicate code words")
 
   def size(self):
     return len(self.code_words)
@@ -57,12 +54,28 @@ class ErrorCorrectingCode:
 
 
 #A function to create the replication code for a user specified length
+<<<<<<< Updated upstream
   def replicationCode(length):
+=======
+  def repititionCode(length):
+>>>>>>> Stashed changes
     #create the 0 replication of size length
     string0 = "".join('0' for i in range(length))
 
     #create the 1 replication of size length
     string1 = "".join('1' for i in range(length))
 
+<<<<<<< Updated upstream
     replication = [string0, string1]
     return replication
+=======
+
+    repitition = [string0, string1]
+    return repitition
+
+
+#A function that will get a subscripted item from the list of code words (ex. code[i])
+  def __getitem__(self, i):
+    list = self.__code_words
+    return list[i]
+>>>>>>> Stashed changes
