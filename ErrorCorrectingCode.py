@@ -67,6 +67,5 @@ class ErrorCorrectingCode:
 
 #A function that will get a subscripted item from the list of code words (ex. code[i])
   def __getitem__(self, i):
-    list = self.__code_words
-    return list[i]
-    
+    codeWord = self.__code_words
+    return codeWord[i]
