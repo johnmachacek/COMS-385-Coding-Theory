@@ -49,7 +49,6 @@ class ErrorCorrectingCode:
 
         a = self.getCodeWords()
 
-        dist = 0
         mindist = []
         for [u, v] in combinations(a, 2):
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
