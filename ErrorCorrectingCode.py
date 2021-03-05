@@ -36,7 +36,7 @@ class ErrorCorrectingCode:
         return string
 
     def size(self):
-        return len(self.code_words)
+        return len(self.__code_words)
 
     def length(self):
         return self.__n
