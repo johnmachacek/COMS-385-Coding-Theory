@@ -28,7 +28,7 @@ class ErrorCorrectingCode:
             raise ValueError("all code words must have the same length")
 
     def size(self):
-        return len(self.code_words)
+        return len(self.__code_words)
 
     def length(self):
         return self.__n
