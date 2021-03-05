@@ -31,12 +31,21 @@ class ErrorCorrectingCode:
     else:
       raise ValueError("All code words must have the same length")
 
+    if len(C) == len(set(C)):
+      self.__code_words = C
+    else:
+      raise ValueError("There can be no duplicate code words")
+
+
   def size(self):
     return len(self.code_words)
 
   def length(self):
     return self.__n
 
+  def __len__(self):
+    return self.size()
+    
 
 #Hamming distance function that takes two words as parameters
   def hammingDist(wrd1, wrd2):
