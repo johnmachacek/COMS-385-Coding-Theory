@@ -56,6 +56,11 @@ class ErrorCorrectingCode:
         return min(mindist)
 
 
+    def __getitem__(self, i):
+        list = self.__code_words
+        return list[i]
+
+
     def decode(codeword):
         closest = []
         dist = 1000
