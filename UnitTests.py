@@ -6,7 +6,7 @@ class Test(unittest.TestCase):
         print("Starting legnth test\n")
         self.assertEqual(2,ECC.ErrorCorrectingCode(['00','11']).length())
         self.assertEqual(5,ECC.ErrorCorrectingCode(['01010','01111','01110']).length())
-        self.assertRaises(ValueError,ECC.ErrorCorrectingCode,['00','001'])
+        self.assertRaises(ValueError,ECC.ErrorCorrectingCode,['00','001'])c
         print("\nFinished with legnth test\n")
 
 if __name__ == '__main__':
