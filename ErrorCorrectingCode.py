@@ -53,3 +53,5 @@ class ErrorCorrectingCode:
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
 
         return min(mindist)
+
+    
