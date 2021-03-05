@@ -54,3 +54,19 @@ class ErrorCorrectingCode:
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
 
         return min(mindist)
+
+
+    def decode(codeword):
+        closest = []
+        dist = 1000
+        wordList = self.getCodeWords
+
+        for word in self.getCodeWords:
+            if(codeword == )
+
+        for word in self.getCodeWords:
+            if (hammingDist(codeword, word) < dist):
+                closest = [word]
+                dist = hammingDist(codeword, word)
+
+            else if (hammingDist(codeword, word) == dist):
