@@ -33,6 +33,11 @@ class ErrorCorrectingCode:
       self.__code_words = C
      else:
       raise ValueError("There can be no duplicate code words")
+      
+      
+  def __repr__(self):
+      rep = f"Code({self.__code_words}"
+      return rep
 
   def size(self):
     return len(self.code_words)
