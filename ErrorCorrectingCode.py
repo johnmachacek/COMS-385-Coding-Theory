@@ -26,6 +26,14 @@ class ErrorCorrectingCode:
             self.__n = m
         else:
             raise ValueError("all code words must have the same length")
+            
+    def __repr__(self):
+        rep = f"Code({self.__code_words}"
+        return rep
+
+    def __str__(self):
+        string = f"This Code has {self.size()} Code Words with a Minimum Distance of {self.minDistance()}"
+        return string
 
     def size(self):
         return len(self.__code_words)
