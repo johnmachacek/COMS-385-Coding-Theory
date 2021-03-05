@@ -36,8 +36,8 @@ class ErrorCorrectingCode:
       
       
   def __repr__(self):
-      rep = f"Code({self.__code_words}"
-      return rep
+    rep = f"Code({self.__code_words}"
+    return rep
 
   def size(self):
     return len(self.code_words)
