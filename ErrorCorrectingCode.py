@@ -48,7 +48,6 @@ class ErrorCorrectingCode:
     def minDistance(self):
 
         a = self.getCodeWords()
-
         mindist = []
         for [u, v] in combinations(a, 2):
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
