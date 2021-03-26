@@ -33,8 +33,11 @@ class F2Polynomial:
                 if int(p[i]) > 1 or int(p[i]) < 0:
                     raise ValueError("A list must contain all 1s and 0s, since it is meant to represent a binary num")
                     
-        # c.divRem(int) = remainder (c % int)
-        def divRem(self, y):
+            
+        def divRem(self, g):
+            # f2poly.divRem(f2poly) = remainder
+            
+            y = g.__p
             x = self.__p
             while x >= y:
                 s = len(bin(x)) - len(bin(y))
