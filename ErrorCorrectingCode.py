@@ -28,7 +28,7 @@ class ErrorCorrectingCode:
             raise ValueError("all code words must have the same length")
 
     def size(self):
-        return len(self.code_words)
+        return len(self.__code_words)
 
     def length(self):
         return self.__n
@@ -61,17 +61,29 @@ class ErrorCorrectingCode:
         return list[i]
 
 
-    def decode(codeword):
+    def decode(self, codeword):
         closest = []
-        dist = 1000
-        wordList = self.getCodeWords
+        dist = self.size()
+        wordList = self.getCodeWords()
+        #print(wordList)
+        numRange = self.length()
+        listSize = self.size()
 
-        for word in self.getCodeWords:
-            if(codeword == )
+        for i in range(listSize):
+            #print(wordList[i], codeword)
+            compare = wordList[i]
+            if compare == codeword:
+                closest.append(compare)
 
-        for word in self.getCodeWords:
-            if (hammingDist(codeword, word) < dist):
-                closest = [word]
-                dist = hammingDist(codeword, word)
+        for word in wordList:
+            if (ErrorCorrectingCode.hammingDist(codeword, word) < dist):
+                closest.append(word)
+                dist = ErrorCorrectingCode.hammingDist(codeword, word)
 
-            else if (hammingDist(codeword, word) == dist):
+            elif (ErrorCorrectingCode.hammingDist(codeword, word) == dist):
+                    closest.append(word)
+
+
+        if (len(closest) == 0):
+            return
+        return closest
