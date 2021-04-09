@@ -42,3 +42,12 @@ class F2Polynomial:
             s = len(bin(x)) - len(bin(y))
             x = x ^ (y << s)
         return x
+
+    @staticmethod
+    def crc(generator, remainder, message):
+        r2 = message.divRem(generator)
+        if remainder == r2:
+            print("No Error Detected")
+        else:
+            print("Error Detected")
+
