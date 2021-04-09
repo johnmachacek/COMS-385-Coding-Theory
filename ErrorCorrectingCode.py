@@ -83,7 +83,6 @@ class ErrorCorrectingCode:
             elif (ErrorCorrectingCode.hammingDist(codeword, word) == dist):
                     closest.append(word)
 
-
         if (len(closest) == 0):
             return
         return closest
