@@ -76,13 +76,14 @@ class ErrorCorrectingCode:
                 closest.append(compare)
 
         for word in wordList:
-            if (ErrorCorrectingCode.hammingDist(codeword, word) < dist):
-                closest.append(word)
+            if(ErrorCorrectingCode.hammingDist(codeword, word) < dist):
+                closest = [word]
                 dist = ErrorCorrectingCode.hammingDist(codeword, word)
 
-            elif (ErrorCorrectingCode.hammingDist(codeword, word) == dist):
+            elif(ErrorCorrectingCode.hammingDist(codeword, word) == dist):
                     closest.append(word)
 
         if (len(closest) == 0):
-            return
+            raise ValueError("Error in the list!")
+
         return closest
