@@ -31,7 +31,7 @@ class ErrorCorrectingCode:
       raise ValueError("All code words must have the same length")
     if len(C) == len(set(C)):
       self.__code_words = C
-     else:
+    else:
       raise ValueError("There can be no duplicate code words")
 
   def size(self):
