@@ -65,3 +65,36 @@ class ErrorCorrectingCode:
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
 
         return min(mindist)
+
+    def __getitem__(self, i):
+        list = self.__code_words
+        return list[i]
+
+
+    def decode(self, codeword):
+        closest = []
+        dist = self.size()
+        wordList = self.getCodeWords()
+        #print(wordList)
+        numRange = self.length()
+        listSize = self.size()
+
+        for i in range(listSize):
+            #print(wordList[i], codeword)
+            compare = wordList[i]
+            if compare == codeword:
+                closest.append(compare)
+
+        for word in wordList:
+            if(ErrorCorrectingCode.hammingDist(codeword, word) < dist):
+                closest = [word]
+                dist = ErrorCorrectingCode.hammingDist(codeword, word)
+
+            elif(ErrorCorrectingCode.hammingDist(codeword, word) == dist):
+                    closest.append(word)
+
+        if (len(closest) == 0):
+            raise ValueError("Error in the list!")
+
+        return closest
+
