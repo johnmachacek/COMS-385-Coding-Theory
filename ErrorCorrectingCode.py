@@ -22,10 +22,20 @@ class ErrorCorrectingCode:
 
         m = len(c[0])
         if all([len(w) == m for w in c]):
-            self.__code_words = c
             self.__n = m
         else:
             raise ValueError("all code words must have the same length")
+        if len(set(c)) == len(c):
+            self.__code_words = c
+        else:
+            raise ValueError("all code words must be distinct")
+        
+    def __repr__(self):
+        return str(self.__code_words)
+
+    def __str__(self):
+        string = "A code with " + str(self.size()) + " code words of length " + str(self.length()) + " and minimum distance  " + str(self.minDistance())
+        return string
 
     def size(self):
         return len(self.__code_words)
@@ -36,6 +46,7 @@ class ErrorCorrectingCode:
     def getCodeWords(self):
       return (self.__code_words)
 
+    @staticmethod
     def hammingDist(wrd1, wrd2):
         dist = 0
 
@@ -54,7 +65,6 @@ class ErrorCorrectingCode:
             mindist.append(ErrorCorrectingCode.hammingDist(u, v))
 
         return min(mindist)
-
 
     def __getitem__(self, i):
         list = self.__code_words
@@ -87,3 +97,4 @@ class ErrorCorrectingCode:
             raise ValueError("Error in the list!")
 
         return closest
+
