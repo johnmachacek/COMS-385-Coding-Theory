@@ -1,5 +1,4 @@
 # exec(open("F2Polynomial.py").read())
-# Need to shift
 
 class F2Polynomial:
     # A class to handle F2 polynomial generation. An F2 polynomial is a list of either 1 or 0.
